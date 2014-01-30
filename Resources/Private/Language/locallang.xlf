@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-30T14:27:35Z" product-name="dst_ei2">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_dstei2_domain_model_europeanicon">
+				<source>EuropeanIcon</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.bezeichnung">
+				<source>bezeichnung</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.isnotoriginal">
+				<source>isnotoriginal</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.originaltitel">
+				<source>originaltitel</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.childof">
+				<source>childof</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_schulbuch">
+				<source>Schulbuch</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.titel">
+				<source>titel</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.autoren">
+				<source>autoren</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.jahr">
+				<source>jahr</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.verlag">
+				<source>verlag</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.auflage">
+				<source>auflage</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_vorkommen">
+				<source>Vorkommen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.seite">
+				<source>seite</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.bild">
+				<source>bild</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.buch">
+				<source>buch</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.groesse">
+				<source>groesse</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.farbigkeit">
+				<source>farbigkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.beschnitt">
+				<source>beschnitt</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen">
+				<source>Farbigkeitsinformationen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen.farbigkeit">
+				<source>farbigkeit</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_beschnittinformation">
+				<source>Beschnittinformation</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_beschnittinformation.beschnitt">
+				<source>beschnitt</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_groesseninformationen">
+				<source>Groesseninformationen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_groesseninformationen.standardgroessen">
+				<source>standardgroessen</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>
