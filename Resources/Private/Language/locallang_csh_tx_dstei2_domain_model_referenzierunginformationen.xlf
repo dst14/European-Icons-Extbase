@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:37:22Z" product-name="dst_ei2">
+		<header/>
+		<body>
+
+			<trans-unit id="referenz.description">
+				<source>Art der Referenz</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

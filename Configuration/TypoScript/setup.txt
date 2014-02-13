@@ -1,0 +1,51 @@
+plugin.tx_dstei2 {
+	view {
+		templateRootPath = {$plugin.tx_dstei2.view.templateRootPath}
+		partialRootPath = {$plugin.tx_dstei2.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_dstei2.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_dstei2.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_dstei2._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-dst-ei2 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-dst-ei2 table th {
+		font-weight:bold;
+	}
+
+	.tx-dst-ei2 table td {
+		vertical-align:top;
+	}
+)
+
+ # Module configuration
+module.tx_dstei2 {
+	persistence {
+		storagePid = {$module.tx_dstei2.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_dstei2.view.templateRootPath}
+		partialRootPath = {$module.tx_dstei2.view.partialRootPath}
+		layoutRootPath = {$module.tx_dstei2.view.layoutRootPath}
+	}
+}

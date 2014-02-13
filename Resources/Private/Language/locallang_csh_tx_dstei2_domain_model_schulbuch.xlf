@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-30T14:27:35Z" product-name="dst_ei2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:37:22Z" product-name="dst_ei2">
 		<header/>
 		<body>
 
 			<trans-unit id="titel.description">
-				<source>titel</source>
+				<source>Titel des Werks</source>
 			</trans-unit>
 			<trans-unit id="autoren.description">
-				<source>autoren</source>
+				<source>Autoren/herausgeber des Werks</source>
 			</trans-unit>
 			<trans-unit id="jahr.description">
-				<source>jahr</source>
+				<source>Erscheinungsjahr der eingesehenen Auflage</source>
 			</trans-unit>
 			<trans-unit id="verlag.description">
-				<source>verlag</source>
+				<source>Bezeichnung des Verlags</source>
+			</trans-unit>
+			<trans-unit id="verlagsort.description">
+				<source>Verlagsort</source>
 			</trans-unit>
 			<trans-unit id="auflage.description">
-				<source>auflage</source>
+				<source>Nr. der Auflage</source>
+			</trans-unit>
+			<trans-unit id="erstauflage.description">
+				<source>Jahr der ersten Auflage</source>
+			</trans-unit>
+			<trans-unit id="zusatz.description">
+				<source>zusätzliche Angaben und Kommentare zum Werk</source>
+			</trans-unit>
+			<trans-unit id="geisignatur.description">
+				<source>Signatur des Werkes </source>
+			</trans-unit>
+			<trans-unit id="bibliolink.description">
+				<source>Link zum Bibliothekskatalog</source>
+			</trans-unit>
+			<trans-unit id="morelink.description">
+				<source>weiterer Link (z.B. Eurviews)</source>
+			</trans-unit>
+			<trans-unit id="morelinktitel.description">
+				<source>Titel des weiteren Links</source>
 			</trans-unit>
 		</body>
 	</file>

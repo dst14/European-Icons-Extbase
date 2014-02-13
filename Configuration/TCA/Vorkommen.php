@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dstei2_domain_model_vorkommen'] = array(
 	'ctrl' => $TCA['tx_dstei2_domain_model_vorkommen']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, seite, bild, buch, groesse, farbigkeit, beschnitt',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, seite, kontext, morelink, morelinktitel, bild, buch, groesse, farbigkeit, beschnitt, referenz, position',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, seite, bild, buch, groesse, farbigkeit, beschnitt,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, seite, kontext, morelink, morelinktitel, bild, buch, groesse, farbigkeit, beschnitt, referenz, position,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -102,89 +102,113 @@ $TCA['tx_dstei2_domain_model_vorkommen'] = array(
 				'eval' => 'trim'
 			),
 		),
+		'kontext' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.kontext',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim',
+				'wizards' => array(
+					'RTE' => array(
+						'icon' => 'wizard_rte2.gif',
+						'notNewRecords'=> 1,
+						'RTEonly' => 1,
+						'script' => 'wizard_rte.php',
+						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
+						'type' => 'script'
+					)
+				)
+			),
+			'defaultExtras' => 'richtext:rte_transform[flag=rte_enabled|mode=ts]',
+		),
+		'morelink' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.morelink',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'morelinktitel' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.morelinktitel',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
 		'bild' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.bild',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_dstei2_domain_model_schulbuch',
+				'type' => 'select',
+				'foreign_table' => 'tx_dstei2_domain_model_europeanicon',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'buch' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.buch',
 			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_dstei2_domain_model_europeanicon',
+				'type' => 'select',
+				'foreign_table' => 'tx_dstei2_domain_model_schulbuch',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'groesse' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.groesse',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_dstei2_domain_model_groesseninformationen',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'farbigkeit' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.farbigkeit',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_dstei2_domain_model_farbigkeitsinformationen',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
 			),
 		),
 		'beschnitt' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.beschnitt',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'tx_dstei2_domain_model_beschnittinformation',
 				'minitems' => 0,
 				'maxitems' => 1,
-				'appearance' => array(
-					'collapseAll' => 0,
-					'levelLinksPosition' => 'top',
-					'showSynchronizationLink' => 1,
-					'showPossibleLocalizationRecords' => 1,
-					'showAllLocalizationLink' => 1
-				),
+			),
+		),
+		'referenz' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.referenz',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_dstei2_domain_model_referenzierunginformationen',
+				'minitems' => 0,
+				'maxitems' => 1,
+			),
+		),
+		'position' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_vorkommen.position',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_dstei2_domain_model_positionimbuchinformation',
+				'minitems' => 0,
+				'maxitems' => 1,
 			),
 		),
 	),

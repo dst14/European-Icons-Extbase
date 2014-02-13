@@ -122,6 +122,23 @@ class SchulbuchTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
+	public function getVerlagsortReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setVerlagsortForStringSetsVerlagsort() { 
+		$this->fixture->setVerlagsort('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getVerlagsort()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getAuflageReturnsInitialValueForString() { }
 
 	/**
@@ -133,6 +150,108 @@ class SchulbuchTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 		$this->assertSame(
 			'Conceived at T3CON10',
 			$this->fixture->getAuflage()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getErstauflageReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setErstauflageForStringSetsErstauflage() { 
+		$this->fixture->setErstauflage('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getErstauflage()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getZusatzReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setZusatzForStringSetsZusatz() { 
+		$this->fixture->setZusatz('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getZusatz()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getGeisignaturReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setGeisignaturForStringSetsGeisignatur() { 
+		$this->fixture->setGeisignatur('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getGeisignatur()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getBibliolinkReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setBibliolinkForStringSetsBibliolink() { 
+		$this->fixture->setBibliolink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getBibliolink()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getMorelinkReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setMorelinkForStringSetsMorelink() { 
+		$this->fixture->setMorelink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getMorelink()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getMorelinktitelReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setMorelinktitelForStringSetsMorelinktitel() { 
+		$this->fixture->setMorelinktitel('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getMorelinktitel()
 		);
 	}
 	

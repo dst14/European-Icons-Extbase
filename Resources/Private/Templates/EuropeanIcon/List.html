@@ -1,0 +1,64 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for EuropeanIcon</h1>
+
+<f:flashMessages />
+
+<table  class="tx_dstei2" >
+	<tr>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.titeldeutsch" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.titeistoriginal" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.titeloriginal" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.abbildung" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.urheber" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.jahr" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.ort" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.land" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.commonslink" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.technik" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.originalgroesse" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.besitzer" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.besitzerlink" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.kommentar" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.literatur" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{europeanIcons}" as="europeanIcon">
+		<tr>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.titeldeutsch}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.titeistoriginal}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.titeloriginal}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.abbildung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.urheber}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.jahr}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.ort}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.land}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.commonslink}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.technik}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.originalgroesse}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.besitzer}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.besitzerlink}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.kommentar}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.literatur}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{europeanIcon : europeanIcon}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{europeanIcon : europeanIcon}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New EuropeanIcon</f:link.action>
+</f:section>

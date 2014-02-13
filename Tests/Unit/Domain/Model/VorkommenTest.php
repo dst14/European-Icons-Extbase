@@ -71,22 +71,73 @@ class VorkommenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getBildReturnsInitialValueForSchulbuch() { }
+	public function getKontextReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBildForSchulbuchSetsBild() { }
+	public function setKontextForStringSetsKontext() { 
+		$this->fixture->setKontext('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getKontext()
+		);
+	}
 	
 	/**
 	 * @test
 	 */
-	public function getBuchReturnsInitialValueForEuropeanIcon() { }
+	public function getMorelinkReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBuchForEuropeanIconSetsBuch() { }
+	public function setMorelinkForStringSetsMorelink() { 
+		$this->fixture->setMorelink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getMorelink()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getMorelinktitelReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setMorelinktitelForStringSetsMorelinktitel() { 
+		$this->fixture->setMorelinktitel('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getMorelinktitel()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getBildReturnsInitialValueForEuropeanIcon() { }
+
+	/**
+	 * @test
+	 */
+	public function setBildForEuropeanIconSetsBild() { }
+	
+	/**
+	 * @test
+	 */
+	public function getBuchReturnsInitialValueForSchulbuch() { }
+
+	/**
+	 * @test
+	 */
+	public function setBuchForSchulbuchSetsBuch() { }
 	
 	/**
 	 * @test
@@ -117,6 +168,26 @@ class VorkommenTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	 * @test
 	 */
 	public function setBeschnittForBeschnittinformationSetsBeschnitt() { }
+	
+	/**
+	 * @test
+	 */
+	public function getReferenzReturnsInitialValueForReferenzierungInformationen() { }
+
+	/**
+	 * @test
+	 */
+	public function setReferenzForReferenzierungInformationenSetsReferenz() { }
+	
+	/**
+	 * @test
+	 */
+	public function getPositionReturnsInitialValueForPositionImBuchInformation() { }
+
+	/**
+	 * @test
+	 */
+	public function setPositionForPositionImBuchInformationSetsPosition() { }
 	
 }
 ?>

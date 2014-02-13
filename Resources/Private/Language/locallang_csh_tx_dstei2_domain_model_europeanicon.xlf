@@ -1,20 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-30T14:27:35Z" product-name="dst_ei2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:37:22Z" product-name="dst_ei2">
 		<header/>
 		<body>
 
-			<trans-unit id="bezeichnung.description">
-				<source>bezeichnung</source>
+			<trans-unit id="titeldeutsch.description">
+				<source>Deutscher Titel</source>
 			</trans-unit>
-			<trans-unit id="isnotoriginal.description">
-				<source>isnotoriginal</source>
+			<trans-unit id="titeistoriginal.description">
+				<source>Dt. Titel ist Originaltitel </source>
 			</trans-unit>
-			<trans-unit id="originaltitel.description">
-				<source>originaltitel</source>
+			<trans-unit id="titeloriginal.description">
+				<source>Originaltitel</source>
+			</trans-unit>
+			<trans-unit id="abbildung.description">
+				<source>Bilddatei</source>
+			</trans-unit>
+			<trans-unit id="urheber.description">
+				<source>Urheber</source>
+			</trans-unit>
+			<trans-unit id="jahr.description">
+				<source>Entstehungsjahr oder -zeitraum</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>Ort der Entstehung</source>
+			</trans-unit>
+			<trans-unit id="land.description">
+				<source>Land der Entstehung</source>
+			</trans-unit>
+			<trans-unit id="commonslink.description">
+				<source>Link zu einem Commons-Bestand</source>
+			</trans-unit>
+			<trans-unit id="technik.description">
+				<source>Arbeitstechnik</source>
+			</trans-unit>
+			<trans-unit id="originalgroesse.description">
+				<source>Originalgröße</source>
+			</trans-unit>
+			<trans-unit id="besitzer.description">
+				<source>Bezeichnung der besitzenden Institution</source>
+			</trans-unit>
+			<trans-unit id="besitzerlink.description">
+				<source>Link zur besitzenden Institution</source>
+			</trans-unit>
+			<trans-unit id="kommentar.description">
+				<source>Kommentar zum Werk</source>
+			</trans-unit>
+			<trans-unit id="literatur.description">
+				<source>Literatur zum Werk</source>
 			</trans-unit>
 			<trans-unit id="childof.description">
-				<source>childof</source>
+				<source>Motivgeschichtlich verebbt von...</source>
 			</trans-unit>
 		</body>
 	</file>

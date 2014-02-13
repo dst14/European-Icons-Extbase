@@ -1,49 +1,115 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-30T14:27:35Z" product-name="dst_ei2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:37:21Z" product-name="dst_ei2">
 		<header/>
 		<body>
 
 			<trans-unit id="tx_dstei2_domain_model_europeanicon">
 				<source>EuropeanIcon</source>
 			</trans-unit>
-			<trans-unit id="tx_dstei2_domain_model_europeanicon.bezeichnung">
-				<source>bezeichnung</source>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.titeldeutsch">
+				<source>Deutscher Titel</source>
 			</trans-unit>
-			<trans-unit id="tx_dstei2_domain_model_europeanicon.isnotoriginal">
-				<source>isnotoriginal</source>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.titeistoriginal">
+				<source>Dt. Titel ist Originaltitel </source>
 			</trans-unit>
-			<trans-unit id="tx_dstei2_domain_model_europeanicon.originaltitel">
-				<source>originaltitel</source>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.titeloriginal">
+				<source>Originaltitel</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.abbildung">
+				<source>Bilddatei</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.urheber">
+				<source>Urheber</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.jahr">
+				<source>Entstehungsjahr oder -zeitraum</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.ort">
+				<source>Ort der Entstehung</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.land">
+				<source>Land der Entstehung</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.commonslink">
+				<source>Link zu einem Commons-Bestand</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.technik">
+				<source>Arbeitstechnik</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.originalgroesse">
+				<source>Originalgröße</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.besitzer">
+				<source>Bezeichnung der besitzenden Institution</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.besitzerlink">
+				<source>Link zur besitzenden Institution</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.kommentar">
+				<source>Kommentar zum Werk</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.literatur">
+				<source>Literatur zum Werk</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_europeanicon.childof">
-				<source>childof</source>
+				<source>Motivgeschichtlich verebbt von...</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_dstei2_domain_model_schulbuch">
 				<source>Schulbuch</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.titel">
-				<source>titel</source>
+				<source>Titel des Werks</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.autoren">
-				<source>autoren</source>
+				<source>Autoren/herausgeber des Werks</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.jahr">
-				<source>jahr</source>
+				<source>Erscheinungsjahr der eingesehenen Auflage</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.verlag">
-				<source>verlag</source>
+				<source>Bezeichnung des Verlags</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.verlagsort">
+				<source>Verlagsort</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.auflage">
-				<source>auflage</source>
+				<source>Nr. der Auflage</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.erstauflage">
+				<source>Jahr der ersten Auflage</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.zusatz">
+				<source>zusätzliche Angaben und Kommentare zum Werk</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.geisignatur">
+				<source>Signatur des Werkes </source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.bibliolink">
+				<source>Link zum Bibliothekskatalog</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.morelink">
+				<source>weiterer Link (z.B. Eurviews)</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.morelinktitel">
+				<source>Titel des weiteren Links</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_dstei2_domain_model_vorkommen">
 				<source>Vorkommen</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.seite">
-				<source>seite</source>
+				<source>Seitenzahl des Vorkommens</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.kontext">
+				<source>Kontext des Vorkommens</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.morelink">
+				<source>Link zu weiteren Informationen (z.B. EurViews)</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.morelinktitel">
+				<source>Titel des Links mit weiteren Informationen</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.bild">
 				<source>bild</source>
@@ -59,6 +125,12 @@
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.beschnitt">
 				<source>beschnitt</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.referenz">
+				<source>Wie ist die Abbildung durch Text referenziert?</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.position">
+				<source>Position im Buch</source>
 			</trans-unit>
 			
 			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen">
@@ -80,6 +152,20 @@
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_groesseninformationen.standardgroessen">
 				<source>standardgroessen</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_positionimbuchinformation">
+				<source>Informationen zur Position im Buch</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_positionimbuchinformation.position">
+				<source>Position im Buch</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_dstei2_domain_model_referenzierunginformationen">
+				<source>Informationen zur Referenzierung im Buch</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_referenzierunginformationen.referenz">
+				<source>Art der Referenz</source>
 			</trans-unit>
 			
 		</body>

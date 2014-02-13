@@ -35,23 +35,44 @@ namespace DanielStange\DstEi2\Domain\Model;
 class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * seite
+	 * Seitenzahl des Vorkommens
 	 *
 	 * @var \string
 	 */
 	protected $seite;
 
 	/**
+	 * Kontext des Vorkommens
+	 *
+	 * @var \string
+	 */
+	protected $kontext;
+
+	/**
+	 * Link zu weiteren Informationen (z.B. EurViews)
+	 *
+	 * @var \string
+	 */
+	protected $morelink;
+
+	/**
+	 * Titel des Links mit weiteren Informationen
+	 *
+	 * @var \string
+	 */
+	protected $morelinktitel;
+
+	/**
 	 * bild
 	 *
-	 * @var \DanielStange\DstEi2\Domain\Model\Schulbuch
+	 * @var \DanielStange\DstEi2\Domain\Model\EuropeanIcon
 	 */
 	protected $bild;
 
 	/**
 	 * buch
 	 *
-	 * @var \DanielStange\DstEi2\Domain\Model\EuropeanIcon
+	 * @var \DanielStange\DstEi2\Domain\Model\Schulbuch
 	 */
 	protected $buch;
 
@@ -77,6 +98,20 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $beschnitt;
 
 	/**
+	 * Wie ist die Abbildung durch Text referenziert?
+	 *
+	 * @var \DanielStange\DstEi2\Domain\Model\ReferenzierungInformationen
+	 */
+	protected $referenz;
+
+	/**
+	 * Position im Buch
+	 *
+	 * @var \DanielStange\DstEi2\Domain\Model\PositionImBuchInformation
+	 */
+	protected $position;
+
+	/**
 	 * Returns the seite
 	 *
 	 * @return \string $seite
@@ -96,9 +131,66 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the kontext
+	 *
+	 * @return \string $kontext
+	 */
+	public function getKontext() {
+		return $this->kontext;
+	}
+
+	/**
+	 * Sets the kontext
+	 *
+	 * @param \string $kontext
+	 * @return void
+	 */
+	public function setKontext($kontext) {
+		$this->kontext = $kontext;
+	}
+
+	/**
+	 * Returns the morelink
+	 *
+	 * @return \string $morelink
+	 */
+	public function getMorelink() {
+		return $this->morelink;
+	}
+
+	/**
+	 * Sets the morelink
+	 *
+	 * @param \string $morelink
+	 * @return void
+	 */
+	public function setMorelink($morelink) {
+		$this->morelink = $morelink;
+	}
+
+	/**
+	 * Returns the morelinktitel
+	 *
+	 * @return \string $morelinktitel
+	 */
+	public function getMorelinktitel() {
+		return $this->morelinktitel;
+	}
+
+	/**
+	 * Sets the morelinktitel
+	 *
+	 * @param \string $morelinktitel
+	 * @return void
+	 */
+	public function setMorelinktitel($morelinktitel) {
+		$this->morelinktitel = $morelinktitel;
+	}
+
+	/**
 	 * Returns the bild
 	 *
-	 * @return \DanielStange\DstEi2\Domain\Model\Schulbuch $bild
+	 * @return \DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild
 	 */
 	public function getBild() {
 		return $this->bild;
@@ -107,17 +199,17 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the bild
 	 *
-	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $bild
+	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild
 	 * @return void
 	 */
-	public function setBild(\DanielStange\DstEi2\Domain\Model\Schulbuch $bild) {
+	public function setBild(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild) {
 		$this->bild = $bild;
 	}
 
 	/**
 	 * Returns the buch
 	 *
-	 * @return \DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch
+	 * @return \DanielStange\DstEi2\Domain\Model\Schulbuch $buch
 	 */
 	public function getBuch() {
 		return $this->buch;
@@ -126,10 +218,10 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the buch
 	 *
-	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch
+	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $buch
 	 * @return void
 	 */
-	public function setBuch(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch) {
+	public function setBuch(\DanielStange\DstEi2\Domain\Model\Schulbuch $buch) {
 		$this->buch = $buch;
 	}
 
@@ -188,6 +280,44 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setBeschnitt(\DanielStange\DstEi2\Domain\Model\Beschnittinformation $beschnitt) {
 		$this->beschnitt = $beschnitt;
+	}
+
+	/**
+	 * Returns the referenz
+	 *
+	 * @return \DanielStange\DstEi2\Domain\Model\ReferenzierungInformationen $referenz
+	 */
+	public function getReferenz() {
+		return $this->referenz;
+	}
+
+	/**
+	 * Sets the referenz
+	 *
+	 * @param \DanielStange\DstEi2\Domain\Model\ReferenzierungInformationen $referenz
+	 * @return void
+	 */
+	public function setReferenz(\DanielStange\DstEi2\Domain\Model\ReferenzierungInformationen $referenz) {
+		$this->referenz = $referenz;
+	}
+
+	/**
+	 * Returns the position
+	 *
+	 * @return \DanielStange\DstEi2\Domain\Model\PositionImBuchInformation $position
+	 */
+	public function getPosition() {
+		return $this->position;
+	}
+
+	/**
+	 * Sets the position
+	 *
+	 * @param \DanielStange\DstEi2\Domain\Model\PositionImBuchInformation $position
+	 * @return void
+	 */
+	public function setPosition(\DanielStange\DstEi2\Domain\Model\PositionImBuchInformation $position) {
+		$this->position = $position;
 	}
 
 }

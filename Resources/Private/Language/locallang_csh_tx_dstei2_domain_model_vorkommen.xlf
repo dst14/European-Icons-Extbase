@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-01-30T14:27:35Z" product-name="dst_ei2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-07T20:37:22Z" product-name="dst_ei2">
 		<header/>
 		<body>
 
 			<trans-unit id="seite.description">
-				<source>seite</source>
+				<source>Seitenzahl des Vorkommens</source>
+			</trans-unit>
+			<trans-unit id="kontext.description">
+				<source>Kontext des Vorkommens</source>
+			</trans-unit>
+			<trans-unit id="morelink.description">
+				<source>Link zu weiteren Informationen (z.B. EurViews)</source>
+			</trans-unit>
+			<trans-unit id="morelinktitel.description">
+				<source>Titel des Links mit weiteren Informationen</source>
 			</trans-unit>
 			<trans-unit id="bild.description">
 				<source>bild</source>
@@ -21,6 +30,12 @@
 			</trans-unit>
 			<trans-unit id="beschnitt.description">
 				<source>beschnitt</source>
+			</trans-unit>
+			<trans-unit id="referenz.description">
+				<source>Wie ist die Abbildung durch Text referenziert?</source>
+			</trans-unit>
+			<trans-unit id="position.description">
+				<source>Position im Buch</source>
 			</trans-unit>
 		</body>
 	</file>

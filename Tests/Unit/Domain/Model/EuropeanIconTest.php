@@ -54,44 +54,248 @@ class EuropeanIconTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
 	/**
 	 * @test
 	 */
-	public function getBezeichnungReturnsInitialValueForString() { }
+	public function getTiteldeutschReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setBezeichnungForStringSetsBezeichnung() { 
-		$this->fixture->setBezeichnung('Conceived at T3CON10');
+	public function setTiteldeutschForStringSetsTiteldeutsch() { 
+		$this->fixture->setTiteldeutsch('Conceived at T3CON10');
 
 		$this->assertSame(
 			'Conceived at T3CON10',
-			$this->fixture->getBezeichnung()
+			$this->fixture->getTiteldeutsch()
 		);
 	}
 	
 	/**
 	 * @test
 	 */
-	public function getIsnotoriginalReturnsInitialValueForOolean() { }
+	public function getTiteistoriginalReturnsInitialValueForOolean() { }
 
 	/**
 	 * @test
 	 */
-	public function setIsnotoriginalForOoleanSetsIsnotoriginal() { }
+	public function setTiteistoriginalForOoleanSetsTiteistoriginal() { }
 	
 	/**
 	 * @test
 	 */
-	public function getOriginaltitelReturnsInitialValueForString() { }
+	public function getTiteloriginalReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setOriginaltitelForStringSetsOriginaltitel() { 
-		$this->fixture->setOriginaltitel('Conceived at T3CON10');
+	public function setTiteloriginalForStringSetsTiteloriginal() { 
+		$this->fixture->setTiteloriginal('Conceived at T3CON10');
 
 		$this->assertSame(
 			'Conceived at T3CON10',
-			$this->fixture->getOriginaltitel()
+			$this->fixture->getTiteloriginal()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getAbbildungReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setAbbildungForStringSetsAbbildung() { 
+		$this->fixture->setAbbildung('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getAbbildung()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getUrheberReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setUrheberForStringSetsUrheber() { 
+		$this->fixture->setUrheber('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getUrheber()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getJahrReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setJahrForStringSetsJahr() { 
+		$this->fixture->setJahr('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getJahr()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOrtReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOrtForStringSetsOrt() { 
+		$this->fixture->setOrt('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOrt()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getLandReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setLandForStringSetsLand() { 
+		$this->fixture->setLand('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getLand()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getCommonslinkReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setCommonslinkForStringSetsCommonslink() { 
+		$this->fixture->setCommonslink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getCommonslink()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getTechnikReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setTechnikForStringSetsTechnik() { 
+		$this->fixture->setTechnik('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getTechnik()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getOriginalgroesseReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setOriginalgroesseForStringSetsOriginalgroesse() { 
+		$this->fixture->setOriginalgroesse('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getOriginalgroesse()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getBesitzerReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setBesitzerForStringSetsBesitzer() { 
+		$this->fixture->setBesitzer('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getBesitzer()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getBesitzerlinkReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setBesitzerlinkForStringSetsBesitzerlink() { 
+		$this->fixture->setBesitzerlink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getBesitzerlink()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getKommentarReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setKommentarForStringSetsKommentar() { 
+		$this->fixture->setKommentar('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getKommentar()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
+	public function getLiteraturReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setLiteraturForStringSetsLiteratur() { 
+		$this->fixture->setLiteratur('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getLiteratur()
 		);
 	}
 	
