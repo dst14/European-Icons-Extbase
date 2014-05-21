@@ -3,6 +3,16 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	$_EXTKEY,
+	'Eilistview',
+	'EI Icons Übersicht'
+);
+
+$pluginSignature = str_replace('_','',$_EXTKEY) . '_eilistview';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_eilistview.xml');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'European Icons');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dstei2_domain_model_europeanicon', 'EXT:dst_ei2/Resources/Private/Language/locallang_csh_tx_dstei2_domain_model_europeanicon.xlf');
