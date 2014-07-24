@@ -1,0 +1,33 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+<table class="tx_dstei2_list" >
+	<f:for each="{europeanIcons}" as="europeanIcon">
+		<tr>
+			<td><f:image src="{europeanIcon.bild.originalResource.publicUrl}" width="120"/></td>
+            <td><span class="tx_dstei2_list_titel">
+                <f:link.action action="show" arguments="{europeanIcon : europeanIcon}">
+                    {europeanIcon.bezeichnung}
+                </f:link.action></span>
+                <span class="tx_dstei2_list_titel_original">
+                <f:link.action action="show" arguments="{europeanIcon : europeanIcon}">
+                    {europeanIcon.originaltitel}
+                </f:link.action></span>
+            </td>
+		</tr>
+	</f:for>
+</table>
+</f:section>
