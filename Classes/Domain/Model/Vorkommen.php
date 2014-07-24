@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,60 +28,56 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Vorkommen
  */
 class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * seite
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $seite;
+	protected $seite = '';
 
 	/**
 	 * bild
 	 *
-	 * @var \DanielStange\DstEi2\Domain\Model\Schulbuch
+	 * @var \DanielStange\DstEi2\Domain\Model\EuropeanIcon
 	 */
-	protected $bild;
+	protected $bild = NULL;
 
 	/**
 	 * buch
 	 *
-	 * @var \DanielStange\DstEi2\Domain\Model\EuropeanIcon
+	 * @var \DanielStange\DstEi2\Domain\Model\Schulbuch
 	 */
-	protected $buch;
+	protected $buch = NULL;
 
 	/**
 	 * groesse
 	 *
 	 * @var \DanielStange\DstEi2\Domain\Model\Groesseninformationen
 	 */
-	protected $groesse;
+	protected $groesse = NULL;
 
 	/**
 	 * farbigkeit
 	 *
 	 * @var \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen
 	 */
-	protected $farbigkeit;
+	protected $farbigkeit = NULL;
 
 	/**
 	 * beschnitt
 	 *
 	 * @var \DanielStange\DstEi2\Domain\Model\Beschnittinformation
 	 */
-	protected $beschnitt;
+	protected $beschnitt = NULL;
 
 	/**
 	 * Returns the seite
 	 *
-	 * @return \string $seite
+	 * @return string $seite
 	 */
 	public function getSeite() {
 		return $this->seite;
@@ -88,7 +86,7 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the seite
 	 *
-	 * @param \string $seite
+	 * @param string $seite
 	 * @return void
 	 */
 	public function setSeite($seite) {
@@ -98,7 +96,7 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the bild
 	 *
-	 * @return \DanielStange\DstEi2\Domain\Model\Schulbuch $bild
+	 * @return \DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild
 	 */
 	public function getBild() {
 		return $this->bild;
@@ -107,17 +105,17 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the bild
 	 *
-	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $bild
+	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild
 	 * @return void
 	 */
-	public function setBild(\DanielStange\DstEi2\Domain\Model\Schulbuch $bild) {
+	public function setBild(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $bild) {
 		$this->bild = $bild;
 	}
 
 	/**
 	 * Returns the buch
 	 *
-	 * @return \DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch
+	 * @return \DanielStange\DstEi2\Domain\Model\Schulbuch $buch
 	 */
 	public function getBuch() {
 		return $this->buch;
@@ -126,10 +124,10 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the buch
 	 *
-	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch
+	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $buch
 	 * @return void
 	 */
-	public function setBuch(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $buch) {
+	public function setBuch(\DanielStange\DstEi2\Domain\Model\Schulbuch $buch) {
 		$this->buch = $buch;
 	}
 
@@ -191,4 +189,3 @@ class Vorkommen extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

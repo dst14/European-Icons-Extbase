@@ -1,11 +1,12 @@
 <?php
 
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,45 +29,45 @@ namespace DanielStange\DstEi2\Tests;
 /**
  * Test case for class \DanielStange\DstEi2\Domain\Model\Beschnittinformation.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage European Icons
- *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class BeschnittinformationTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class BeschnittinformationTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \DanielStange\DstEi2\Domain\Model\Beschnittinformation
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+	protected function setUp() {
+		$this->subject = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getBeschnittReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setBeschnittForStringSetsBeschnitt() { 
-		$this->fixture->setBeschnitt('Conceived at T3CON10');
-
+	public function getBeschnittReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getBeschnitt()
+			'',
+			$this->subject->getBeschnitt()
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function setBeschnittForStringSetsBeschnitt() {
+		$this->subject->setBeschnitt('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'beschnitt',
+			$this->subject
+		);
+	}
 }
-?>

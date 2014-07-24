@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,21 +28,17 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * EuropeanIcon
  */
 class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * bezeichnung
 	 *
-	 * @var \string
+	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $bezeichnung;
+	protected $bezeichnung = '';
 
 	/**
 	 * isnotoriginal
@@ -53,21 +51,28 @@ class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * originaltitel
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $originaltitel;
+	protected $originaltitel = '';
+
+	/**
+	 * bild
+	 *
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+	 */
+	protected $bild = NULL;
 
 	/**
 	 * childof
 	 *
 	 * @var \DanielStange\DstEi2\Domain\Model\EuropeanIcon
 	 */
-	protected $childof;
+	protected $childof = NULL;
 
 	/**
 	 * Returns the bezeichnung
 	 *
-	 * @return \string $bezeichnung
+	 * @return string $bezeichnung
 	 */
 	public function getBezeichnung() {
 		return $this->bezeichnung;
@@ -76,7 +81,7 @@ class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the bezeichnung
 	 *
-	 * @param \string $bezeichnung
+	 * @param string $bezeichnung
 	 * @return void
 	 */
 	public function setBezeichnung($bezeichnung) {
@@ -108,13 +113,13 @@ class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return boolean
 	 */
 	public function isIsnotoriginal() {
-		return $this->getIsnotoriginal();
+		return $this->isnotoriginal;
 	}
 
 	/**
 	 * Returns the originaltitel
 	 *
-	 * @return \string $originaltitel
+	 * @return string $originaltitel
 	 */
 	public function getOriginaltitel() {
 		return $this->originaltitel;
@@ -123,11 +128,30 @@ class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the originaltitel
 	 *
-	 * @param \string $originaltitel
+	 * @param string $originaltitel
 	 * @return void
 	 */
 	public function setOriginaltitel($originaltitel) {
 		$this->originaltitel = $originaltitel;
+	}
+
+	/**
+	 * Returns the bild
+	 *
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $bild
+	 */
+	public function getBild() {
+		return $this->bild;
+	}
+
+	/**
+	 * Sets the bild
+	 *
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $bild
+	 * @return void
+	 */
+	public function setBild(\TYPO3\CMS\Extbase\Domain\Model\FileReference $bild) {
+		$this->bild = $bild;
 	}
 
 	/**
@@ -150,4 +174,3 @@ class EuropeanIcon extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

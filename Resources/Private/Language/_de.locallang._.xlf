@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-07-18T16:02:45Z" product-name="dst_ei2">
+		<header/>
+		<body>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon">
+				<source>European Icon</source>
+				<target>European Icon</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.bezeichnung">
+				<source>Bezeichnung</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.isnotoriginal">
+				<source>Isnotoriginal</source>
+				<target>Bildtitel ist nicht der Originaltitel</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.originaltitel">
+				<source>Originaltitel</source>
+				<target>Originaltitel</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.bild">
+				<source>Bild</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.childof">
+				<source>Childof</source>
+				<target>Motivgeschichtlicher Ursprung</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch">
+				<source>Schulbuch</source>
+				<target>Schulbuch</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.titel">
+				<source>Titel</source>
+				<target>Schulbuch-Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.autoren">
+				<source>Autoren</source>
+				<target>Autoren</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.jahr">
+				<source>Jahr</source>
+				<target>Jahr</target>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.verlag">
+				<source>Verlag</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_schulbuch.auflage">
+				<source>Auflage</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen">
+				<source>Vorkommen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.seite">
+				<source>Seite</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.bild">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.buch">
+				<source>Buch</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.groesse">
+				<source>Groesse</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.farbigkeit">
+				<source>Farbigkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_vorkommen.beschnitt">
+				<source>Beschnitt</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen">
+				<source>Farbigkeitsinformationen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen.farbigkeit">
+				<source>Farbigkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_beschnittinformation">
+				<source>Beschnittinformation</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_beschnittinformation.beschnitt">
+				<source>Beschnitt</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_groesseninformationen">
+				<source>Groesseninformationen</source>
+			</trans-unit>
+			<trans-unit id="tx_dstei2_domain_model_groesseninformationen.standardgroessen">
+				<source>Standardgroessen</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

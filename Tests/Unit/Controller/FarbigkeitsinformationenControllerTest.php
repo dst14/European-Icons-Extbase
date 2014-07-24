@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\DstEi2\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst_ei2_Controller_FarbigkeitsinformationenController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage European Icons
+ * Test case for class DanielStange\DstEi2\Controller\FarbigkeitsinformationenController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class FarbigkeitsinformationenControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class FarbigkeitsinformationenControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+	/**
+	 * @var \DanielStange\DstEi2\Controller\FarbigkeitsinformationenController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\DstEi2\\Controller\\FarbigkeitsinformationenController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllFarbigkeitsinformationensFromRepositoryAndAssignsThemToView() {
+
+		$allFarbigkeitsinformationens = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$farbigkeitsinformationenRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$farbigkeitsinformationenRepository->expects($this->once())->method('findAll')->will($this->returnValue($allFarbigkeitsinformationens));
+		$this->inject($this->subject, 'farbigkeitsinformationenRepository', $farbigkeitsinformationenRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('farbigkeitsinformationens', $allFarbigkeitsinformationens);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenFarbigkeitsinformationenToView() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('farbigkeitsinformationen', $farbigkeitsinformationen);
+
+		$this->subject->showAction($farbigkeitsinformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenFarbigkeitsinformationenToView() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newFarbigkeitsinformationen', $farbigkeitsinformationen);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($farbigkeitsinformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenFarbigkeitsinformationenToFarbigkeitsinformationenRepository() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$farbigkeitsinformationenRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$farbigkeitsinformationenRepository->expects($this->once())->method('add')->with($farbigkeitsinformationen);
+		$this->inject($this->subject, 'farbigkeitsinformationenRepository', $farbigkeitsinformationenRepository);
+
+		$this->subject->createAction($farbigkeitsinformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenFarbigkeitsinformationenToView() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('farbigkeitsinformationen', $farbigkeitsinformationen);
+
+		$this->subject->editAction($farbigkeitsinformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenFarbigkeitsinformationenInFarbigkeitsinformationenRepository() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$farbigkeitsinformationenRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$farbigkeitsinformationenRepository->expects($this->once())->method('update')->with($farbigkeitsinformationen);
+		$this->inject($this->subject, 'farbigkeitsinformationenRepository', $farbigkeitsinformationenRepository);
+
+		$this->subject->updateAction($farbigkeitsinformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenFarbigkeitsinformationenFromFarbigkeitsinformationenRepository() {
+		$farbigkeitsinformationen = new \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen();
+
+		$farbigkeitsinformationenRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$farbigkeitsinformationenRepository->expects($this->once())->method('remove')->with($farbigkeitsinformationen);
+		$this->inject($this->subject, 'farbigkeitsinformationenRepository', $farbigkeitsinformationenRepository);
+
+		$this->subject->deleteAction($farbigkeitsinformationen);
+	}
 }
-?>

@@ -1,3 +1,4 @@
+
 <f:layout name="Default" />
 
 This template displays a NEW form for the current domain object.
@@ -14,11 +15,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 <h1>New Schulbuch</h1>
 
-<f:flashMessages />
+<f:flashMessages renderMode="div" />
 
-<f:render partial="FormErrors" arguments="{object:Schulbuch}"/>
+<f:render partial="FormErrors" arguments="{object:Schulbuch}" />
 
-<f:form action="create"  name="newSchulbuch" object="{newSchulbuch}">
+<f:form action="create"  enctype="multipart/form-data"  name="newSchulbuch" object="{newSchulbuch}">
 <f:render partial="Schulbuch/FormFields" />
 	<f:form.submit value="Create new" />
 </f:form>

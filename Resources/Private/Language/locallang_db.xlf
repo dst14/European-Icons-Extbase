@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:15:07Z" product-name="dst_ei2">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-07-18T16:02:45Z" product-name="dst_ei2">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_dstei2_domain_model_europeanicon">
 				<source>European Icon</source>
 			</trans-unit>
@@ -11,15 +10,17 @@
 				<source>Bezeichnung</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_europeanicon.isnotoriginal">
-				<source>Isnotoriginal</source>
+				<source>abweichender Originaltitel</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_europeanicon.originaltitel">
 				<source>Originaltitel</source>
 			</trans-unit>
-			<trans-unit id="tx_dstei2_domain_model_europeanicon.childof">
-				<source>Childof</source>
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.bild">
+				<source>Bild</source>
 			</trans-unit>
-
+			<trans-unit id="tx_dstei2_domain_model_europeanicon.childof">
+				<source>motivgeschichtlich verwandt mit</source>
+			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_schulbuch">
 				<source>Schulbuch</source>
 			</trans-unit>
@@ -38,7 +39,6 @@
 			<trans-unit id="tx_dstei2_domain_model_schulbuch.auflage">
 				<source>Auflage</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dstei2_domain_model_vorkommen">
 				<source>Vorkommen</source>
 			</trans-unit>
@@ -49,10 +49,10 @@
 				<source>Bild</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.buch">
-				<source>Buch</source>
+				<source>Schulbuch</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.groesse">
-				<source>Groesse</source>
+				<source>Größe</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.farbigkeit">
 				<source>Farbigkeit</source>
@@ -60,28 +60,24 @@
 			<trans-unit id="tx_dstei2_domain_model_vorkommen.beschnitt">
 				<source>Beschnitt</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen">
 				<source>Farbigkeitsinformationen</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_farbigkeitsinformationen.farbigkeit">
 				<source>Farbigkeit</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dstei2_domain_model_beschnittinformation">
 				<source>Beschnittinformation</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_beschnittinformation.beschnitt">
 				<source>Beschnitt</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dstei2_domain_model_groesseninformationen">
-				<source>Groesseninformationen</source>
+				<source>Größeninformationen</source>
 			</trans-unit>
 			<trans-unit id="tx_dstei2_domain_model_groesseninformationen.standardgroessen">
-				<source>Standardgroessen</source>
+				<source>Standardgrößen</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>

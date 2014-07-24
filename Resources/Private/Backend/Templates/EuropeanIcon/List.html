@@ -1,3 +1,4 @@
+
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -11,7 +12,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-<f:section name="main">
+<f:section name="content">
 <h1>Listing for EuropeanIcon</h1>
 
 <f:flashMessages />
@@ -21,6 +22,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<th><f:translate key="tx_dstei2_domain_model_europeanicon.bezeichnung" /></th>
 		<th><f:translate key="tx_dstei2_domain_model_europeanicon.isnotoriginal" /></th>
 		<th><f:translate key="tx_dstei2_domain_model_europeanicon.originaltitel" /></th>
+		<th><f:translate key="tx_dstei2_domain_model_europeanicon.bild" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
@@ -30,6 +32,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.bezeichnung}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.isnotoriginal}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.originaltitel}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{europeanIcon : europeanIcon}"> {europeanIcon.bild.originalResource.name}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{europeanIcon : europeanIcon}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{europeanIcon : europeanIcon}">Delete</f:link.action></td>
 		</tr>

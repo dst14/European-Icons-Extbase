@@ -3,18 +3,19 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_dstei2_domain_model_schulbuch'] = array(
-	'ctrl' => $TCA['tx_dstei2_domain_model_schulbuch']['ctrl'],
+$GLOBALS['TCA']['tx_dstei2_domain_model_schulbuch'] = array(
+	'ctrl' => $GLOBALS['TCA']['tx_dstei2_domain_model_schulbuch']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, autoren, jahr, verlag, auflage',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, titel, autoren, jahr, verlag, auflage,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, titel, autoren, jahr, verlag, auflage, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+	
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -46,6 +47,7 @@ $TCA['tx_dstei2_domain_model_schulbuch'] = array(
 				'type' => 'passthrough',
 			),
 		),
+
 		't3ver_label' => array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
 			'config' => array(
@@ -54,6 +56,7 @@ $TCA['tx_dstei2_domain_model_schulbuch'] = array(
 				'max' => 255,
 			)
 		),
+	
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -93,6 +96,7 @@ $TCA['tx_dstei2_domain_model_schulbuch'] = array(
 				),
 			),
 		),
+
 		'titel' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:dst_ei2/Resources/Private/Language/locallang_db.xlf:tx_dstei2_domain_model_schulbuch.titel',
@@ -138,7 +142,6 @@ $TCA['tx_dstei2_domain_model_schulbuch'] = array(
 				'eval' => 'trim'
 			),
 		),
+		
 	),
 );
-
-?>

@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Controller;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,11 +28,7 @@ namespace DanielStange\DstEi2\Controller;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * SchulbuchController
  */
 class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
@@ -40,7 +38,7 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @var \DanielStange\DstEi2\Domain\Repository\SchulbuchRepository
 	 * @inject
 	 */
-	protected $schulbuchRepository;
+	protected $schulbuchRepository = NULL;
 
 	/**
 	 * action list
@@ -66,7 +64,7 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * action new
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $newSchulbuch
-	 * @dontvalidate $newSchulbuch
+	 * @ignorevalidation $newSchulbuch
 	 * @return void
 	 */
 	public function newAction(\DanielStange\DstEi2\Domain\Model\Schulbuch $newSchulbuch = NULL) {
@@ -80,8 +78,8 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function createAction(\DanielStange\DstEi2\Domain\Model\Schulbuch $newSchulbuch) {
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->schulbuchRepository->add($newSchulbuch);
-		$this->flashMessageContainer->add('Your new Schulbuch was created.');
 		$this->redirect('list');
 	}
 
@@ -89,6 +87,7 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * action edit
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\Schulbuch $schulbuch
+	 * @ignorevalidation $schulbuch
 	 * @return void
 	 */
 	public function editAction(\DanielStange\DstEi2\Domain\Model\Schulbuch $schulbuch) {
@@ -102,8 +101,8 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function updateAction(\DanielStange\DstEi2\Domain\Model\Schulbuch $schulbuch) {
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->schulbuchRepository->update($schulbuch);
-		$this->flashMessageContainer->add('Your Schulbuch was updated.');
 		$this->redirect('list');
 	}
 
@@ -114,10 +113,9 @@ class SchulbuchController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	public function deleteAction(\DanielStange\DstEi2\Domain\Model\Schulbuch $schulbuch) {
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->schulbuchRepository->remove($schulbuch);
-		$this->flashMessageContainer->add('Your Schulbuch was removed.');
 		$this->redirect('list');
 	}
 
 }
-?>

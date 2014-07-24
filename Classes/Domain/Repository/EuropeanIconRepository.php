@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Repository;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,13 +28,9 @@ namespace DanielStange\DstEi2\Domain\Repository;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * The repository for EuropeanIcons
  */
 class EuropeanIconRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	
 }
-?>

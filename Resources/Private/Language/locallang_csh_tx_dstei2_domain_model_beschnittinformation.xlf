@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:15:07Z" product-name="dst_ei2">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-07-18T16:02:46Z" product-name="dst_ei2">
 		<header/>
 		<body>
-
 			<trans-unit id="beschnitt.description">
-				<source>beschnitt</source>
+				<source>Beschnitt</source>
 			</trans-unit>
 		</body>
 	</file>

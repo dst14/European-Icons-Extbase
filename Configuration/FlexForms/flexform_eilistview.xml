@@ -10,24 +10,17 @@
 					<switchableControllerActions>
 						<TCEforms>
 							<label>Select function</label>
+                            <onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">Vorkommen auflisten</numIndex>
-										<numIndex index="1">Vorkommen->list</numIndex>
+										<numIndex index="1">Vorkommen->list;Vorkommen->show</numIndex>
 									</numIndex>
 									<numIndex index="1">
-										<numIndex index="0">Detailansicht</numIndex>
-										<numIndex index="1">Vorkommen->show</numIndex>
-									</numIndex>
-									<numIndex index="2">
 										<numIndex index="0">Icons auflisten</numIndex>
 										<numIndex index="1">EuropeanIcon->list</numIndex>
-									</numIndex>
-									<numIndex index="3">
-										<numIndex index="0">Icon zeigen</numIndex>
-										<numIndex index="1">EuropeanIcon->show</numIndex>
 									</numIndex>
 								</items>
 							</config>

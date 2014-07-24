@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\DstEi2\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst_ei2_Controller_VorkommenController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage European Icons
+ * Test case for class DanielStange\DstEi2\Controller\VorkommenController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class VorkommenControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class VorkommenControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+	/**
+	 * @var \DanielStange\DstEi2\Controller\VorkommenController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\DstEi2\\Controller\\VorkommenController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllVorkommensFromRepositoryAndAssignsThemToView() {
+
+		$allVorkommens = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$vorkommenRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$vorkommenRepository->expects($this->once())->method('findAll')->will($this->returnValue($allVorkommens));
+		$this->inject($this->subject, 'vorkommenRepository', $vorkommenRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('vorkommens', $allVorkommens);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenVorkommenToView() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('vorkommen', $vorkommen);
+
+		$this->subject->showAction($vorkommen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenVorkommenToView() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newVorkommen', $vorkommen);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($vorkommen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenVorkommenToVorkommenRepository() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$vorkommenRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$vorkommenRepository->expects($this->once())->method('add')->with($vorkommen);
+		$this->inject($this->subject, 'vorkommenRepository', $vorkommenRepository);
+
+		$this->subject->createAction($vorkommen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenVorkommenToView() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('vorkommen', $vorkommen);
+
+		$this->subject->editAction($vorkommen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenVorkommenInVorkommenRepository() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$vorkommenRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$vorkommenRepository->expects($this->once())->method('update')->with($vorkommen);
+		$this->inject($this->subject, 'vorkommenRepository', $vorkommenRepository);
+
+		$this->subject->updateAction($vorkommen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenVorkommenFromVorkommenRepository() {
+		$vorkommen = new \DanielStange\DstEi2\Domain\Model\Vorkommen();
+
+		$vorkommenRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$vorkommenRepository->expects($this->once())->method('remove')->with($vorkommen);
+		$this->inject($this->subject, 'vorkommenRepository', $vorkommenRepository);
+
+		$this->subject->deleteAction($vorkommen);
+	}
 }
-?>

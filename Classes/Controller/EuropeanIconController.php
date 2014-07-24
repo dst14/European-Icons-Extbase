@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Controller;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,11 +28,7 @@ namespace DanielStange\DstEi2\Controller;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * EuropeanIconController
  */
 class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
@@ -40,7 +38,7 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * @var \DanielStange\DstEi2\Domain\Repository\EuropeanIconRepository
 	 * @inject
 	 */
-	protected $europeanIconRepository;
+	protected $europeanIconRepository = NULL;
 
 	/**
 	 * action list
@@ -59,20 +57,19 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * @return void
 	 */
 	public function showAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $europeanIcon) {
+        //$vorkommen = $this->vorkommenRepository->findByUid($europeanIcon);
 		$this->view->assign('europeanIcon', $europeanIcon);
+        //$this->view->assign('vorkommen', $vorkommen);
 	}
 
 	/**
 	 * action new
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $newEuropeanIcon
-	 * @dontvalidate $newEuropeanIcon
+	 * @ignorevalidation $newEuropeanIcon
 	 * @return void
 	 */
 	public function newAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $newEuropeanIcon = NULL) {
-		if ($newEuropeanIcon == NULL) { // workaround for fluid bug ##5636
-			$newEuropeanIcon = t3lib_div::makeInstance('');
-		}
 		$this->view->assign('newEuropeanIcon', $newEuropeanIcon);
 	}
 
@@ -83,8 +80,8 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * @return void
 	 */
 	public function createAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $newEuropeanIcon) {
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->europeanIconRepository->add($newEuropeanIcon);
-		$this->flashMessageContainer->add('Your new EuropeanIcon was created.');
 		$this->redirect('list');
 	}
 
@@ -92,6 +89,7 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * action edit
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\EuropeanIcon $europeanIcon
+	 * @ignorevalidation $europeanIcon
 	 * @return void
 	 */
 	public function editAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $europeanIcon) {
@@ -105,8 +103,8 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * @return void
 	 */
 	public function updateAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $europeanIcon) {
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->europeanIconRepository->update($europeanIcon);
-		$this->flashMessageContainer->add('Your EuropeanIcon was updated.');
 		$this->redirect('list');
 	}
 
@@ -117,10 +115,9 @@ class EuropeanIconController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 	 * @return void
 	 */
 	public function deleteAction(\DanielStange\DstEi2\Domain\Model\EuropeanIcon $europeanIcon) {
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->europeanIconRepository->remove($europeanIcon);
-		$this->flashMessageContainer->add('Your EuropeanIcon was removed.');
 		$this->redirect('list');
 	}
 
 }
-?>

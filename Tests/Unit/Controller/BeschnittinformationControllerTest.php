@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\DstEi2\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst_ei2_Controller_BeschnittinformationController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage European Icons
+ * Test case for class DanielStange\DstEi2\Controller\BeschnittinformationController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class BeschnittinformationControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class BeschnittinformationControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+	/**
+	 * @var \DanielStange\DstEi2\Controller\BeschnittinformationController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\DstEi2\\Controller\\BeschnittinformationController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllBeschnittinformationsFromRepositoryAndAssignsThemToView() {
+
+		$allBeschnittinformations = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$beschnittinformationRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$beschnittinformationRepository->expects($this->once())->method('findAll')->will($this->returnValue($allBeschnittinformations));
+		$this->inject($this->subject, 'beschnittinformationRepository', $beschnittinformationRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('beschnittinformations', $allBeschnittinformations);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenBeschnittinformationToView() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('beschnittinformation', $beschnittinformation);
+
+		$this->subject->showAction($beschnittinformation);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenBeschnittinformationToView() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newBeschnittinformation', $beschnittinformation);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($beschnittinformation);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenBeschnittinformationToBeschnittinformationRepository() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$beschnittinformationRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$beschnittinformationRepository->expects($this->once())->method('add')->with($beschnittinformation);
+		$this->inject($this->subject, 'beschnittinformationRepository', $beschnittinformationRepository);
+
+		$this->subject->createAction($beschnittinformation);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenBeschnittinformationToView() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('beschnittinformation', $beschnittinformation);
+
+		$this->subject->editAction($beschnittinformation);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenBeschnittinformationInBeschnittinformationRepository() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$beschnittinformationRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$beschnittinformationRepository->expects($this->once())->method('update')->with($beschnittinformation);
+		$this->inject($this->subject, 'beschnittinformationRepository', $beschnittinformationRepository);
+
+		$this->subject->updateAction($beschnittinformation);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenBeschnittinformationFromBeschnittinformationRepository() {
+		$beschnittinformation = new \DanielStange\DstEi2\Domain\Model\Beschnittinformation();
+
+		$beschnittinformationRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$beschnittinformationRepository->expects($this->once())->method('remove')->with($beschnittinformation);
+		$this->inject($this->subject, 'beschnittinformationRepository', $beschnittinformationRepository);
+
+		$this->subject->deleteAction($beschnittinformation);
+	}
 }
-?>

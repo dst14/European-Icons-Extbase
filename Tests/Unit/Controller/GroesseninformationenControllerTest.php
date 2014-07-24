@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\DstEi2\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst_ei2_Controller_GroesseninformationenController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage European Icons
+ * Test case for class DanielStange\DstEi2\Controller\GroesseninformationenController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class GroesseninformationenControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class GroesseninformationenControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+	/**
+	 * @var \DanielStange\DstEi2\Controller\GroesseninformationenController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\DstEi2\\Controller\\GroesseninformationenController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllGroesseninformationensFromRepositoryAndAssignsThemToView() {
+
+		$allGroesseninformationens = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$groesseninformationenRepository = $this->getMock('', array('findAll'), array(), '', FALSE);
+		$groesseninformationenRepository->expects($this->once())->method('findAll')->will($this->returnValue($allGroesseninformationens));
+		$this->inject($this->subject, 'groesseninformationenRepository', $groesseninformationenRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('groesseninformationens', $allGroesseninformationens);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenGroesseninformationenToView() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('groesseninformationen', $groesseninformationen);
+
+		$this->subject->showAction($groesseninformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenGroesseninformationenToView() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newGroesseninformationen', $groesseninformationen);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($groesseninformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenGroesseninformationenToGroesseninformationenRepository() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$groesseninformationenRepository = $this->getMock('', array('add'), array(), '', FALSE);
+		$groesseninformationenRepository->expects($this->once())->method('add')->with($groesseninformationen);
+		$this->inject($this->subject, 'groesseninformationenRepository', $groesseninformationenRepository);
+
+		$this->subject->createAction($groesseninformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenGroesseninformationenToView() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('groesseninformationen', $groesseninformationen);
+
+		$this->subject->editAction($groesseninformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenGroesseninformationenInGroesseninformationenRepository() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$groesseninformationenRepository = $this->getMock('', array('update'), array(), '', FALSE);
+		$groesseninformationenRepository->expects($this->once())->method('update')->with($groesseninformationen);
+		$this->inject($this->subject, 'groesseninformationenRepository', $groesseninformationenRepository);
+
+		$this->subject->updateAction($groesseninformationen);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenGroesseninformationenFromGroesseninformationenRepository() {
+		$groesseninformationen = new \DanielStange\DstEi2\Domain\Model\Groesseninformationen();
+
+		$groesseninformationenRepository = $this->getMock('', array('remove'), array(), '', FALSE);
+		$groesseninformationenRepository->expects($this->once())->method('remove')->with($groesseninformationen);
+		$this->inject($this->subject, 'groesseninformationenRepository', $groesseninformationenRepository);
+
+		$this->subject->deleteAction($groesseninformationen);
+	}
 }
-?>

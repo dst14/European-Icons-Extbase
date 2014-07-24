@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:15:07Z" product-name="dst_ei2">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-07-18T16:02:46Z" product-name="dst_ei2">
 		<header/>
 		<body>
-
 			<trans-unit id="bezeichnung.description">
-				<source>bezeichnung</source>
+				<source>Bezeichnung</source>
 			</trans-unit>
 			<trans-unit id="isnotoriginal.description">
-				<source>isnotoriginal</source>
+				<source>abweichender Originaltitel</source>
 			</trans-unit>
 			<trans-unit id="originaltitel.description">
-				<source>originaltitel</source>
+				<source>Originaltitel</source>
+			</trans-unit>
+			<trans-unit id="bild.description">
+				<source>Bild</source>
 			</trans-unit>
 			<trans-unit id="childof.description">
-				<source>childof</source>
+				<source>Motivgeschichtlich verwandt mit</source>
 			</trans-unit>
 		</body>
 	</file>

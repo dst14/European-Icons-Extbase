@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,25 +28,21 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Farbigkeitsinformationen
  */
 class Farbigkeitsinformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * farbigkeit
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $farbigkeit;
+	protected $farbigkeit = '';
 
 	/**
 	 * Returns the farbigkeit
 	 *
-	 * @return \string $farbigkeit
+	 * @return string $farbigkeit
 	 */
 	public function getFarbigkeit() {
 		return $this->farbigkeit;
@@ -53,7 +51,7 @@ class Farbigkeitsinformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractV
 	/**
 	 * Sets the farbigkeit
 	 *
-	 * @param \string $farbigkeit
+	 * @param string $farbigkeit
 	 * @return void
 	 */
 	public function setFarbigkeit($farbigkeit) {
@@ -61,4 +59,3 @@ class Farbigkeitsinformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractV
 	}
 
 }
-?>

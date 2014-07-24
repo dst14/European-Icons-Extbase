@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,25 +28,21 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Beschnittinformation
  */
 class Beschnittinformation extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * beschnitt
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $beschnitt;
+	protected $beschnitt = '';
 
 	/**
 	 * Returns the beschnitt
 	 *
-	 * @return \string $beschnitt
+	 * @return string $beschnitt
 	 */
 	public function getBeschnitt() {
 		return $this->beschnitt;
@@ -53,7 +51,7 @@ class Beschnittinformation extends \TYPO3\CMS\Extbase\DomainObject\AbstractValue
 	/**
 	 * Sets the beschnitt
 	 *
-	 * @param \string $beschnitt
+	 * @param string $beschnitt
 	 * @return void
 	 */
 	public function setBeschnitt($beschnitt) {
@@ -61,4 +59,3 @@ class Beschnittinformation extends \TYPO3\CMS\Extbase\DomainObject\AbstractValue
 	}
 
 }
-?>

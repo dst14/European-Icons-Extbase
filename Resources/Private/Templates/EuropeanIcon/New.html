@@ -1,3 +1,4 @@
+
 <f:layout name="Default" />
 
 This template displays a NEW form for the current domain object.
@@ -14,11 +15,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 <h1>New EuropeanIcon</h1>
 
-<f:flashMessages />
+<f:flashMessages renderMode="div" />
 
-<f:render partial="FormErrors" arguments="{object:EuropeanIcon}"/>
+<f:render partial="FormErrors" arguments="{object:EuropeanIcon}" />
 
-<f:form action="create"  name="newEuropeanIcon" object="{newEuropeanIcon}">
+<f:form action="create"  enctype="multipart/form-data"  name="newEuropeanIcon" object="{newEuropeanIcon}">
 <f:render partial="EuropeanIcon/FormFields" />
 	<f:form.submit value="Create new" />
 </f:form>

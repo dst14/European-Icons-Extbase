@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-01T11:15:07Z" product-name="dst_ei2">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-07-18T16:02:46Z" product-name="dst_ei2">
 		<header/>
 		<body>
-
 			<trans-unit id="titel.description">
-				<source>titel</source>
+				<source>Titel</source>
 			</trans-unit>
 			<trans-unit id="autoren.description">
-				<source>autoren</source>
+				<source>Autor(en)</source>
 			</trans-unit>
 			<trans-unit id="jahr.description">
-				<source>jahr</source>
+				<source>Veröffentlichungsjahr</source>
 			</trans-unit>
 			<trans-unit id="verlag.description">
-				<source>verlag</source>
+				<source>Verlag</source>
 			</trans-unit>
 			<trans-unit id="auflage.description">
-				<source>auflage</source>
+				<source>Auflage</source>
 			</trans-unit>
 		</body>
 	</file>

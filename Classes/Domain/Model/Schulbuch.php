@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,53 +28,49 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Schulbuch
  */
 class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * titel
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $titel;
+	protected $titel = '';
 
 	/**
 	 * autoren
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $autoren;
+	protected $autoren = '';
 
 	/**
 	 * jahr
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $jahr;
+	protected $jahr = '';
 
 	/**
 	 * verlag
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $verlag;
+	protected $verlag = '';
 
 	/**
 	 * auflage
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $auflage;
+	protected $auflage = '';
 
 	/**
 	 * Returns the titel
 	 *
-	 * @return \string $titel
+	 * @return string $titel
 	 */
 	public function getTitel() {
 		return $this->titel;
@@ -81,7 +79,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the titel
 	 *
-	 * @param \string $titel
+	 * @param string $titel
 	 * @return void
 	 */
 	public function setTitel($titel) {
@@ -91,7 +89,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the autoren
 	 *
-	 * @return \string $autoren
+	 * @return string $autoren
 	 */
 	public function getAutoren() {
 		return $this->autoren;
@@ -100,7 +98,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the autoren
 	 *
-	 * @param \string $autoren
+	 * @param string $autoren
 	 * @return void
 	 */
 	public function setAutoren($autoren) {
@@ -110,7 +108,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the jahr
 	 *
-	 * @return \string $jahr
+	 * @return string $jahr
 	 */
 	public function getJahr() {
 		return $this->jahr;
@@ -119,7 +117,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the jahr
 	 *
-	 * @param \string $jahr
+	 * @param string $jahr
 	 * @return void
 	 */
 	public function setJahr($jahr) {
@@ -129,7 +127,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the verlag
 	 *
-	 * @return \string $verlag
+	 * @return string $verlag
 	 */
 	public function getVerlag() {
 		return $this->verlag;
@@ -138,7 +136,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the verlag
 	 *
-	 * @param \string $verlag
+	 * @param string $verlag
 	 * @return void
 	 */
 	public function setVerlag($verlag) {
@@ -148,7 +146,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the auflage
 	 *
-	 * @return \string $auflage
+	 * @return string $auflage
 	 */
 	public function getAuflage() {
 		return $this->auflage;
@@ -157,7 +155,7 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the auflage
 	 *
-	 * @param \string $auflage
+	 * @param string $auflage
 	 * @return void
 	 */
 	public function setAuflage($auflage) {
@@ -165,4 +163,3 @@ class Schulbuch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 }
-?>

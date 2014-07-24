@@ -9,6 +9,7 @@ CREATE TABLE tx_dstei2_domain_model_europeanicon (
 	bezeichnung varchar(255) DEFAULT '' NOT NULL,
 	isnotoriginal tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	originaltitel varchar(255) DEFAULT '' NOT NULL,
+	bild int(11) unsigned NOT NULL default '0',
 	childof int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -29,7 +30,6 @@ CREATE TABLE tx_dstei2_domain_model_europeanicon (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -37,7 +37,7 @@ CREATE TABLE tx_dstei2_domain_model_europeanicon (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -73,7 +73,6 @@ CREATE TABLE tx_dstei2_domain_model_schulbuch (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -81,7 +80,7 @@ CREATE TABLE tx_dstei2_domain_model_schulbuch (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -118,7 +117,6 @@ CREATE TABLE tx_dstei2_domain_model_vorkommen (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -126,7 +124,7 @@ CREATE TABLE tx_dstei2_domain_model_vorkommen (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -158,7 +156,6 @@ CREATE TABLE tx_dstei2_domain_model_farbigkeitsinformationen (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -166,7 +163,7 @@ CREATE TABLE tx_dstei2_domain_model_farbigkeitsinformationen (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -198,7 +195,6 @@ CREATE TABLE tx_dstei2_domain_model_beschnittinformation (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -206,7 +202,7 @@ CREATE TABLE tx_dstei2_domain_model_beschnittinformation (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -238,7 +234,6 @@ CREATE TABLE tx_dstei2_domain_model_groesseninformationen (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-	t3_origuid int(11) DEFAULT '0' NOT NULL,
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -246,6 +241,6 @@ CREATE TABLE tx_dstei2_domain_model_groesseninformationen (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
-	KEY language (l10n_parent,sys_language_uid)
+ KEY language (l10n_parent,sys_language_uid)
 
 );

@@ -1,3 +1,4 @@
+
 <f:layout name="Default" />
 
 This Template is responsible for displaying a single view for a domain object
@@ -14,7 +15,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 <h1>Single View for Vorkommen</h1>
 
-<f:flashMessages />
+<f:flashMessages renderMode="div" />
 <f:render partial="Vorkommen/Properties" arguments="{vorkommen:vorkommen}" />
 <f:link.action action="list">Back to list</f:link.action><br />
 <f:link.action action="new">New Vorkommen</f:link.action>

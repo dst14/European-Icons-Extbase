@@ -1,11 +1,12 @@
 <?php
 
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Domain\Model;
+
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,113 +29,137 @@ namespace DanielStange\DstEi2\Tests;
 /**
  * Test case for class \DanielStange\DstEi2\Domain\Model\Schulbuch.
  *
- * @version $Id$
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package TYPO3
- * @subpackage European Icons
- *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class SchulbuchTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
+class SchulbuchTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @var \DanielStange\DstEi2\Domain\Model\Schulbuch
 	 */
-	protected $fixture;
+	protected $subject = NULL;
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\Schulbuch();
+	protected function setUp() {
+		$this->subject = new \DanielStange\DstEi2\Domain\Model\Schulbuch();
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function getTitelReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setTitelForStringSetsTitel() { 
-		$this->fixture->setTitel('Conceived at T3CON10');
-
+	public function getTitelReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getTitel()
+			'',
+			$this->subject->getTitel()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getAutorenReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setAutorenForStringSetsAutoren() { 
-		$this->fixture->setAutoren('Conceived at T3CON10');
+	public function setTitelForStringSetsTitel() {
+		$this->subject->setTitel('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getAutoren()
+			'titel',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getJahrReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setJahrForStringSetsJahr() { 
-		$this->fixture->setJahr('Conceived at T3CON10');
-
+	public function getAutorenReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getJahr()
+			'',
+			$this->subject->getAutoren()
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getVerlagReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setVerlagForStringSetsVerlag() { 
-		$this->fixture->setVerlag('Conceived at T3CON10');
+	public function setAutorenForStringSetsAutoren() {
+		$this->subject->setAutoren('Conceived at T3CON10');
 
-		$this->assertSame(
+		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			$this->fixture->getVerlag()
+			'autoren',
+			$this->subject
 		);
 	}
-	
-	/**
-	 * @test
-	 */
-	public function getAuflageReturnsInitialValueForString() { }
 
 	/**
 	 * @test
 	 */
-	public function setAuflageForStringSetsAuflage() { 
-		$this->fixture->setAuflage('Conceived at T3CON10');
-
+	public function getJahrReturnsInitialValueForString() {
 		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getAuflage()
+			'',
+			$this->subject->getJahr()
 		);
 	}
-	
+
+	/**
+	 * @test
+	 */
+	public function setJahrForStringSetsJahr() {
+		$this->subject->setJahr('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'jahr',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getVerlagReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getVerlag()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setVerlagForStringSetsVerlag() {
+		$this->subject->setVerlag('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'verlag',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getAuflageReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getAuflage()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setAuflageForStringSetsAuflage() {
+		$this->subject->setAuflage('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'auflage',
+			$this->subject
+		);
+	}
 }
-?>

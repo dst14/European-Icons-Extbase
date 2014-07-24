@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Domain\Model;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,25 +28,21 @@ namespace DanielStange\DstEi2\Domain\Model;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Groesseninformationen
  */
 class Groesseninformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 
 	/**
 	 * standardgroessen
 	 *
-	 * @var \string
+	 * @var string
 	 */
-	protected $standardgroessen;
+	protected $standardgroessen = '';
 
 	/**
 	 * Returns the standardgroessen
 	 *
-	 * @return \string $standardgroessen
+	 * @return string $standardgroessen
 	 */
 	public function getStandardgroessen() {
 		return $this->standardgroessen;
@@ -53,7 +51,7 @@ class Groesseninformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractValu
 	/**
 	 * Sets the standardgroessen
 	 *
-	 * @param \string $standardgroessen
+	 * @param string $standardgroessen
 	 * @return void
 	 */
 	public function setStandardgroessen($standardgroessen) {
@@ -61,4 +59,3 @@ class Groesseninformationen extends \TYPO3\CMS\Extbase\DomainObject\AbstractValu
 	}
 
 }
-?>

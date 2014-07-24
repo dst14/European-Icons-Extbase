@@ -1,11 +1,13 @@
 <?php
 namespace DanielStange\DstEi2\Controller;
 
+
 /***************************************************************
+ *
  *  Copyright notice
  *
  *  (c) 2014 Daniel Stange <daniel.stange@gmail.com>
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,11 +28,7 @@ namespace DanielStange\DstEi2\Controller;
  ***************************************************************/
 
 /**
- *
- *
- * @package dst_ei2
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * FarbigkeitsinformationenController
  */
 class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
@@ -58,7 +56,7 @@ class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controll
 	 * action new
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $newFarbigkeitsinformationen
-	 * @dontvalidate $newFarbigkeitsinformationen
+	 * @ignorevalidation $newFarbigkeitsinformationen
 	 * @return void
 	 */
 	public function newAction(\DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $newFarbigkeitsinformationen = NULL) {
@@ -72,8 +70,8 @@ class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controll
 	 * @return void
 	 */
 	public function createAction(\DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $newFarbigkeitsinformationen) {
+		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->farbigkeitsinformationenRepository->add($newFarbigkeitsinformationen);
-		$this->flashMessageContainer->add('Your new Farbigkeitsinformationen was created.');
 		$this->redirect('list');
 	}
 
@@ -81,6 +79,7 @@ class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controll
 	 * action edit
 	 *
 	 * @param \DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $farbigkeitsinformationen
+	 * @ignorevalidation $farbigkeitsinformationen
 	 * @return void
 	 */
 	public function editAction(\DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $farbigkeitsinformationen) {
@@ -94,8 +93,8 @@ class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controll
 	 * @return void
 	 */
 	public function updateAction(\DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $farbigkeitsinformationen) {
+		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->farbigkeitsinformationenRepository->update($farbigkeitsinformationen);
-		$this->flashMessageContainer->add('Your Farbigkeitsinformationen was updated.');
 		$this->redirect('list');
 	}
 
@@ -106,10 +105,9 @@ class FarbigkeitsinformationenController extends \TYPO3\CMS\Extbase\Mvc\Controll
 	 * @return void
 	 */
 	public function deleteAction(\DanielStange\DstEi2\Domain\Model\Farbigkeitsinformationen $farbigkeitsinformationen) {
+		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
 		$this->farbigkeitsinformationenRepository->remove($farbigkeitsinformationen);
-		$this->flashMessageContainer->add('Your Farbigkeitsinformationen was removed.');
 		$this->redirect('list');
 	}
 
 }
-?>

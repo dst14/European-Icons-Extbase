@@ -1,5 +1,5 @@
 <?php
-namespace DanielStange\DstEi2\Tests;
+namespace DanielStange\DstEi2\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,37 +25,118 @@ namespace DanielStange\DstEi2\Tests;
  ***************************************************************/
 
 /**
- * Test case for class Tx_Dst_ei2_Controller_EuropeanIconController.
- *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
- * @package TYPO3
- * @subpackage European Icons
+ * Test case for class DanielStange\DstEi2\Controller\EuropeanIconController.
  *
  * @author Daniel Stange <daniel.stange@gmail.com>
  */
-class EuropeanIconControllerTest extends \TYPO3\CMS\Extbase\Tests\Unit\BaseTestCase {
-	/**
-	 * @var 
-	 */
-	protected $fixture;
+class EuropeanIconControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
-	public function setUp() {
-		$this->fixture = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+	/**
+	 * @var \DanielStange\DstEi2\Controller\EuropeanIconController
+	 */
+	protected $subject = NULL;
+
+	protected function setUp() {
+		$this->subject = $this->getMock('DanielStange\\DstEi2\\Controller\\EuropeanIconController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
-	public function tearDown() {
-		unset($this->fixture);
+	protected function tearDown() {
+		unset($this->subject);
 	}
 
 	/**
 	 * @test
 	 */
-	public function dummyMethod() {
-		$this->markTestIncomplete();
+	public function listActionFetchesAllEuropeanIconsFromRepositoryAndAssignsThemToView() {
+
+		$allEuropeanIcons = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+
+		$europeanIconRepository = $this->getMock('DanielStange\\DstEi2\\Domain\\Repository\\EuropeanIconRepository', array('findAll'), array(), '', FALSE);
+		$europeanIconRepository->expects($this->once())->method('findAll')->will($this->returnValue($allEuropeanIcons));
+		$this->inject($this->subject, 'europeanIconRepository', $europeanIconRepository);
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('europeanIcons', $allEuropeanIcons);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->listAction();
 	}
 
+	/**
+	 * @test
+	 */
+	public function showActionAssignsTheGivenEuropeanIconToView() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('europeanIcon', $europeanIcon);
+
+		$this->subject->showAction($europeanIcon);
+	}
+
+	/**
+	 * @test
+	 */
+	public function newActionAssignsTheGivenEuropeanIconToView() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$view->expects($this->once())->method('assign')->with('newEuropeanIcon', $europeanIcon);
+		$this->inject($this->subject, 'view', $view);
+
+		$this->subject->newAction($europeanIcon);
+	}
+
+	/**
+	 * @test
+	 */
+	public function createActionAddsTheGivenEuropeanIconToEuropeanIconRepository() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$europeanIconRepository = $this->getMock('DanielStange\\DstEi2\\Domain\\Repository\\EuropeanIconRepository', array('add'), array(), '', FALSE);
+		$europeanIconRepository->expects($this->once())->method('add')->with($europeanIcon);
+		$this->inject($this->subject, 'europeanIconRepository', $europeanIconRepository);
+
+		$this->subject->createAction($europeanIcon);
+	}
+
+	/**
+	 * @test
+	 */
+	public function editActionAssignsTheGivenEuropeanIconToView() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
+		$this->inject($this->subject, 'view', $view);
+		$view->expects($this->once())->method('assign')->with('europeanIcon', $europeanIcon);
+
+		$this->subject->editAction($europeanIcon);
+	}
+
+	/**
+	 * @test
+	 */
+	public function updateActionUpdatesTheGivenEuropeanIconInEuropeanIconRepository() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$europeanIconRepository = $this->getMock('DanielStange\\DstEi2\\Domain\\Repository\\EuropeanIconRepository', array('update'), array(), '', FALSE);
+		$europeanIconRepository->expects($this->once())->method('update')->with($europeanIcon);
+		$this->inject($this->subject, 'europeanIconRepository', $europeanIconRepository);
+
+		$this->subject->updateAction($europeanIcon);
+	}
+
+	/**
+	 * @test
+	 */
+	public function deleteActionRemovesTheGivenEuropeanIconFromEuropeanIconRepository() {
+		$europeanIcon = new \DanielStange\DstEi2\Domain\Model\EuropeanIcon();
+
+		$europeanIconRepository = $this->getMock('DanielStange\\DstEi2\\Domain\\Repository\\EuropeanIconRepository', array('remove'), array(), '', FALSE);
+		$europeanIconRepository->expects($this->once())->method('remove')->with($europeanIcon);
+		$this->inject($this->subject, 'europeanIconRepository', $europeanIconRepository);
+
+		$this->subject->deleteAction($europeanIcon);
+	}
 }
-?>
